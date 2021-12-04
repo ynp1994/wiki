@@ -8,5 +8,15 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8082/demo/findAll
+GET http://localhost:8082/demo/list
 Accept: application/json
+
+###
+
+POST http://localhost:8082/demo/insert
+Content-Type: application/json
+
+{
+  "id": 1,
+  "username": "test"
+}
