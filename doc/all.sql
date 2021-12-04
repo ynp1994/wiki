@@ -40,3 +40,5 @@ create table `ebook`
 insert into `ebook` (id, name, description) values(1, 'Spring boot 入门教程', '零基础入门Spring boot开发，企业级应用开发最佳首选框架');
 insert into `ebook` (id, name, description) values(2, 'Vue 入门教程', '零基础入门Vue开发，企业级应用开发最佳首选框架');
 insert into `ebook` (id, name, description) values(3, 'Redis入门教程', '零基础入门Redis开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values(4, 'Python入门教程', '零基础入门Python开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values(5, 'Go入门教程', '零基础入门Go开发，企业级应用开发最佳首选框架');

@@ -1,6 +1,7 @@
 package com.huawei.wiki.controller;
 
 import com.huawei.wiki.domain.Ebook;
+import com.huawei.wiki.resp.CommonResponse;
 import com.huawei.wiki.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +30,9 @@ public class EbookController {
     }
 
     @GetMapping("/list")
-    public List<Ebook> list() {
-        return ebookService.list();
+    public CommonResponse<List<Ebook>> list() {
+        CommonResponse<List<Ebook>> response = new CommonResponse<>();
+        response.setContent(ebookService.list());
+        return response;
     }
 }
