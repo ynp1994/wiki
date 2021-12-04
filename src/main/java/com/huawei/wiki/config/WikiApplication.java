@@ -1,5 +1,6 @@
 package com.huawei.wiki.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,7 @@ import org.springframework.core.env.Environment;
  * @version 1.0
  */
 @ComponentScan("com.huawei.wiki")
+@MapperScan("com.huawei.wiki.mapper")
 @SpringBootApplication
 public class WikiApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(WikiApplication.class);
