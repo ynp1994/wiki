@@ -1,15 +1,15 @@
 package com.huawei.wiki.controller;
 
-import com.huawei.wiki.domain.Ebook;
-import com.huawei.wiki.resp.CommonResponse;
+import com.huawei.wiki.request.EbookRequest;
+import com.huawei.wiki.response.CommonResponse;
 import com.huawei.wiki.service.EbookService;
+import com.huawei.wiki.vo.EbookVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author ynp2012
@@ -23,16 +23,10 @@ public class EbookController {
     @Resource
     private EbookService ebookService;
 
-    @GetMapping("/listString")
-    public String list2() {
-        List<Ebook> list = ebookService.list();
-        return list.stream().map(Ebook::toString).collect(Collectors.joining());
-    }
-
     @GetMapping("/list")
-    public CommonResponse<List<Ebook>> list() {
-        CommonResponse<List<Ebook>> response = new CommonResponse<>();
-        response.setContent(ebookService.list());
+    public CommonResponse<List<EbookVo>> list(EbookRequest request) {
+        CommonResponse<List<EbookVo>> response = new CommonResponse<>();
+        response.setContent(ebookService.list(request.getName()));
         return response;
     }
 }

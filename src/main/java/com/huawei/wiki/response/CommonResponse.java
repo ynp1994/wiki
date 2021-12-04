@@ -1,4 +1,4 @@
-package com.huawei.wiki.resp;
+package com.huawei.wiki.response;
 
 /**
  * @author ynp2012
